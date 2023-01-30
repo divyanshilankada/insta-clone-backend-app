@@ -58,7 +58,7 @@ app.post("/post",upload.single('PostImage'), async (req, res) => {
 
     try{
         
-        console.log(req.file.fi);
+        //console.log(req.file.fi);
         // const file = req.files.PostImage;
 
         // file.mv("./Images/" + file.name, (err) => {
@@ -76,11 +76,11 @@ app.post("/post",upload.single('PostImage'), async (req, res) => {
             location: req.body.location,
             description: req.body.description,
             likes: req.body.likes,
-            //PostImage: req.files.PostImage.name
-            PostImage:{
-                data: fs.readFileSync('uploads/' + req.file.filename),
-                contentType: 'image/png'
-            }
+            PostImage: req.PostImage
+            // PostImage:{
+            //     data: fs.readFileSync('uploads/' + req.file.filename),
+            //     contentType: 'image/png'
+            // }
         });
 
         console.log(data);
