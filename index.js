@@ -76,7 +76,7 @@ app.post("/post",upload.single('PostImage'), async (req, res) => {
             location: req.body.location,
             description: req.body.description,
             likes: req.body.likes,
-            PostImage: req.PostImage
+            PostImage: req.body.PostImage
             // PostImage:{
             //     data: fs.readFileSync('uploads/' + req.file.filename),
             //     contentType: 'image/png'
